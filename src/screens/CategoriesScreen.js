@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
+import CategoryItem from '../components/CategoryItem';
 
 const CategoriesScreen = ({ navigation }) => {
   const categories = ['Business', 'Technology', 'Sports', 'Entertainment'];
@@ -11,13 +12,13 @@ const CategoriesScreen = ({ navigation }) => {
   return (
     <View>
       <Text>Choose a Category</Text>
-      {categories.map((category, index) => (
-        <Button
-          key={index}
-          title={category}
-          onPress={() => navigateToArticleList(category.toLowerCase())}
-        />
-      ))}
+      <FlatList
+        data={categories}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => (
+          <CategoryItem category={item} onPress={navigateToArticleList} />
+        )}
+      />
     </View>
   );
 };

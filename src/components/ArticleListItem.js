@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 
-const ArticleListItem = ({ article }) => {
+const ArticleListItem = ({ article, onPress }) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => onPress(article)}>
       <View>
         <Image
           source={{ uri: article.urlToImage }}

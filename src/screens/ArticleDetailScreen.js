@@ -1,21 +1,16 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, Image, Text, StyleSheet } from 'react-native';
 
 const ArticleDetailScreen = ({ route }) => {
   const { article } = route.params;
 
   return (
     <ScrollView style={styles.container}>
-      <Image
-        source={{ uri: article.urlToImage }}
-        style={styles.image}
-      />
-      <View style={styles.contentContainer}>
-        <Text style={styles.title}>{article.title}</Text>
-        <Text style={styles.author}>By {article.author}</Text>
-        <Text style={styles.publishedAt}>{article.publishedAt}</Text>
-        <Text style={styles.content}>{article.content}</Text>
-      </View>
+      <Image source={{ uri: article.urlToImage }} style={styles.image} />
+      <Text style={styles.title}>{article.title}</Text>
+      <Text style={styles.author}>By {article.author}</Text>
+      <Text style={styles.publishedAt}>{article.publishedAt}</Text>
+      <Text style={styles.content}>{article.content}</Text>
     </ScrollView>
   );
 };
@@ -29,25 +24,25 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 200,
   },
-  contentContainer: {
-    padding: 20,
-  },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginVertical: 10,
+    paddingHorizontal: 20,
   },
   author: {
     color: 'gray',
-    marginBottom: 5,
+    paddingHorizontal: 20,
   },
   publishedAt: {
     color: 'gray',
-    marginBottom: 15,
+    paddingHorizontal: 20,
+    marginBottom: 20,
   },
   content: {
     fontSize: 16,
     lineHeight: 24,
+    paddingHorizontal: 20,
   },
 });
 
