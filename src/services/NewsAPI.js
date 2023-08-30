@@ -7,7 +7,7 @@ const NewsAPI = {
   getTopHeadlines: async (category) => {
     try {
       const response = await axios.get(
-        `${BASE_URL}top-headlines?category=${category}&apiKey=${API_KEY}`
+        `${BASE_URL}top-headlines?category=${category}&apiKey=${API_KEY}&language=en`
       );
       return response.data.articles;
     } catch (error) {
