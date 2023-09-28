@@ -14,10 +14,11 @@ const CategoryItem = ({ category, onPress }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'grey',
     padding: 10,
     borderRadius: 8,
     marginVertical: 5,
+    alignItems: 'center',
   },
   text: {
     fontSize: 16,
